@@ -673,14 +673,14 @@ function countBy(items, field, fallback = "none") {
   }, {});
 }
 
-function renderBars(target, counts, order = null) {
+function renderBars(target, counts, order = null, labeler = (key) => key) {
   const entries = (order || Object.keys(counts))
     .map((key) => [key, counts[key] || 0])
     .filter(([, value]) => value > 0);
   const max = Math.max(...entries.map(([, value]) => value), 1);
   $(target).innerHTML = entries.length ? entries.map(([label, value]) => `
     <div class="bar-row">
-      <span>${escapeHtml(label)}</span>
+      <span>${escapeHtml(labeler(label))}</span>
       <div class="bar-track"><i style="width:${Math.max((value / max) * 100, 4).toFixed(1)}%"></i></div>
       <b>${value}</b>
     </div>
@@ -704,21 +704,68 @@ function auditEventLabel(type) {
     agent_response: "AI 响应",
     tool_call: "工具调用",
     approval: "审批动作",
+    approval_created: "审批创建",
+    approval_decision: "审批决策",
+    execution_result: "执行结果",
+    llm_plan: "模型规划",
+    agent_plan: "执行计划",
+    agent_result: "Agent 结果",
+    security_check: "安全检查",
     security_decision: "安全审核",
+    knowledge_retrieved: "知识库检索",
     knowledge_lookup: "RAG 检索",
+    knowledge_learned: "知识沉淀",
     system: "系统事件",
   }[type || "unknown"] || type || "unknown";
 }
 
 function auditStatusLabel(item) {
-  if (item.status) return item.status;
+  if (typeof item === "string") {
+    return {
+      pending: "待处理",
+      approved: "已通过",
+      rejected: "已拒绝",
+      succeeded: "成功",
+      failed: "失败",
+    }[item] || item;
+  }
+  if (item.status) return auditStatusLabel(item.status);
   if (["forbidden", "high"].includes(item.risk_level)) return "需关注";
   return "成功";
 }
 
+function toolRiskLabel(risk) {
+  return auditRiskLabel(risk);
+}
+
+function toolPermissionLabel(permission) {
+  return {
+    readonly: "只读权限",
+    guarded_write: "受控写入",
+    guarded_delete: "受控删除",
+    guarded_mutation: "受控变更",
+  }[permission || ""] || permission || "-";
+}
+
+function toolEnabledLabel(enabled) {
+  return enabled ? "已启用" : "已禁用";
+}
+
+function toolHealthLabel(healthy) {
+  return healthy ? "健康" : "异常";
+}
+
+function toolCallStatusLabel(status) {
+  return {
+    succeeded: "成功",
+    failed: "失败",
+    pending: "待执行",
+  }[status || ""] || status || "-";
+}
+
 function auditItemSummary(item) {
   const detail = item.detail || {};
-  return item.summary || detail.content || detail.answer || detail.command || detail.tool || item.event_type || "-";
+  return item.summary || detail.content || detail.answer || detail.command || detail.tool || auditEventLabel(item.event_type) || "-";
 }
 
 function riskTone(risk) {
@@ -1100,8 +1147,8 @@ async function loadOpsSummary() {
   const auditGroups = groupAuditByTrace(audit.items || []);
   const alerts = (audit.items || [])
     .filter((item) => ["medium", "high", "forbidden"].includes(item.risk_level))
-    .map((item) => ({ title: item.summary, description: `${item.event_type} · ${item.risk_level}` }));
-  $("#recentTasks").innerHTML = renderCompactItems(auditGroups.map((item) => ({ title: item.title, description: `${item.event_count} 条日志 · ${item.risk_level}` })), "暂无近期任务");
+    .map((item) => ({ title: item.summary, description: `${auditEventLabel(item.event_type)} · ${auditRiskLabel(item.risk_level)}` }));
+  $("#recentTasks").innerHTML = renderCompactItems(auditGroups.map((item) => ({ title: item.title, description: `${item.event_count} 条日志 · ${auditRiskLabel(item.risk_level)}` })), "暂无近期任务");
   $("#recentAlerts").innerHTML = renderCompactItems(alerts, "暂无中高风险告警");
   const pending = (approvals.items || []).filter((item) => item.status === "pending").length;
   $("#opsDialogMetric").textContent = formatNumber(stats?.chat?.user_messages ?? auditGroups.length);
@@ -1147,17 +1194,17 @@ async function loadBigscreen() {
     return;
   }
   const riskCounts = countBy(items, "risk_level", "none");
-  renderBars("#riskBars", riskCounts, ["forbidden", "high", "medium", "low", "readonly", "none"]);
+  renderBars("#riskBars", riskCounts, ["forbidden", "high", "medium", "low", "readonly", "none"], auditRiskLabel);
   const eventCounts = countBy(items, "event_type", "unknown");
   const topEvents = Object.fromEntries(Object.entries(eventCounts).sort((a, b) => b[1] - a[1]).slice(0, 6));
-  renderBars("#eventBars", topEvents);
+  renderBars("#eventBars", topEvents, null, auditEventLabel);
   const groups = groupAuditByTrace(items).slice(0, 6);
   $("#riskTotalMetric").textContent = `${items.length} 条日志`;
   $("#traceTotalMetric").textContent = `${groups.length} 条链路`;
   $("#bigTraceList").innerHTML = groups.length ? groups.map((item) => `
     <article>
       <b>${escapeHtml(item.title)}</b>
-      <span>${escapeHtml(item.event_count)} 条 · ${escapeHtml(item.risk_level)} · ${escapeHtml(item.last_at || "-")}</span>
+      <span>${escapeHtml(item.event_count)} 条 · ${escapeHtml(auditRiskLabel(item.risk_level))} · ${escapeHtml(item.last_at || "-")}</span>
     </article>
   `).join("") : '<div class="empty-note">暂无审计链路</div>';
 }
@@ -1167,18 +1214,18 @@ function renderTool(tool) {
   const schemaHint = Object.keys(schema).length ? JSON.stringify(schema) : "{}";
   const adminActions = state.user?.role === "admin"
     ? `<div class="actions">
-         <button data-tool-enable="${tool.name}" ${tool.enabled ? "disabled" : ""}>Enable</button>
-         <button data-tool-disable="${tool.name}" ${tool.enabled ? "" : "disabled"}>Disable</button>
+         <button data-tool-enable="${tool.name}" ${tool.enabled ? "disabled" : ""}>启用</button>
+         <button data-tool-disable="${tool.name}" ${tool.enabled ? "" : "disabled"}>禁用</button>
        </div>`
     : "";
   return `
     <article class="tool-card">
       <h3>${tool.name}</h3>
       <p>${tool.description}</p>
-      <span class="pill ${tool.risk_level}">${tool.risk_level}</span>
-      <span class="pill">${tool.permission}</span>
-      <span class="pill ${tool.enabled ? "readonly" : "forbidden"}">${tool.enabled ? "enabled" : "disabled"}</span>
-      ${tool.requires_approval ? '<span class="pill high">requires approval</span>' : ""}
+      <span class="pill ${tool.risk_level}">${toolRiskLabel(tool.risk_level)}</span>
+      <span class="pill">${toolPermissionLabel(tool.permission)}</span>
+      <span class="pill ${tool.enabled ? "readonly" : "forbidden"}">${toolEnabledLabel(tool.enabled)}</span>
+      ${tool.requires_approval ? '<span class="pill high">需要审批</span>' : ""}
       <div class="tool-invoke">
         <textarea data-tool-args="${escapeHtml(tool.name)}" rows="3" spellcheck="false" placeholder='参数 JSON，例如 ${escapeHtml(schemaHint)}'>{}</textarea>
         <button type="button" data-tool-invoke="${escapeHtml(tool.name)}" ${tool.enabled ? "" : "disabled"}>执行</button>
@@ -1242,12 +1289,12 @@ function renderMcpService(tool, health) {
     <article class="tool-card service-card">
       <div class="service-head">
         <h3>${escapeHtml(tool.name)}</h3>
-        <span class="pill ${health?.healthy ? "readonly" : "forbidden"}">${health?.healthy ? "healthy" : "unhealthy"}</span>
+        <span class="pill ${health?.healthy ? "readonly" : "forbidden"}">${toolHealthLabel(health?.healthy)}</span>
       </div>
       <p>${escapeHtml(tool.description || "-")}</p>
       <div class="row-meta">
-        <span>权限：${escapeHtml(tool.permission || "-")}</span>
-        <span>风险：${escapeHtml(tool.risk_level || "-")}</span>
+        <span>权限：${escapeHtml(toolPermissionLabel(tool.permission))}</span>
+        <span>风险：${escapeHtml(toolRiskLabel(tool.risk_level))}</span>
         <span>审批：${tool.requires_approval ? "需要" : "不需要"}</span>
         <span>状态：${tool.enabled ? "启用" : "禁用"}</span>
       </div>
@@ -1344,7 +1391,7 @@ async function changePassword(event) {
 }
 
 function renderAudit(item) {
-  const title = item.title || `${item.event_type} · ${item.summary}`;
+  const title = item.title || `${auditEventLabel(item.event_type)} · ${item.summary}`;
   const detail = item.description || (item.detail ? JSON.stringify(item.detail).slice(0, 180) : "");
   return `
     <article class="row-card audit-row" data-trace-open="${escapeHtml(item.trace_id)}">
@@ -1353,7 +1400,7 @@ function renderAudit(item) {
       <div class="row-meta">
         <span>${escapeHtml(item.created_at || item.last_at)}</span>
         <span>${escapeHtml(item.trace_id)}</span>
-        <span>${escapeHtml(item.risk_level || "none")}</span>
+        <span>${escapeHtml(auditRiskLabel(item.risk_level))}</span>
         ${item.event_count ? `<span>${escapeHtml(item.event_count)} 条日志</span>` : ""}
       </div>
     </article>
@@ -1466,8 +1513,8 @@ function renderAuditTimeline(trace) {
           </div>
           <h3>${escapeHtml(item.summary || item.event_type)}</h3>
           <div class="row-meta">
-            <span>${escapeHtml(item.event_type)}</span>
-            <span>${escapeHtml(item.risk_level || "none")}</span>
+            <span>${escapeHtml(auditEventLabel(item.event_type))}</span>
+            <span>${escapeHtml(auditRiskLabel(item.risk_level))}</span>
           </div>
           ${detail ? `<details><summary>查看日志详情</summary><pre>${escapeHtml(detail)}</pre></details>` : ""}
         </div>
@@ -1520,8 +1567,8 @@ function renderClosureReport(report) {
 }
 
 function renderAuditTrace(trace) {
-  const tools = (trace.tool_calls || []).map((tool) => `<span class="mini-pill">${escapeHtml(tool.tool_name)} · ${escapeHtml(tool.status)} · ${escapeHtml(tool.duration_ms)}ms</span>`).join("");
-  const approvals = (trace.approvals || []).map((item) => `<span class="mini-pill ${item.status === "pending" ? "danger" : ""}">${escapeHtml(item.action)} · ${escapeHtml(item.status)}</span>`).join("");
+  const tools = (trace.tool_calls || []).map((tool) => `<span class="mini-pill">${escapeHtml(tool.tool_name)} · ${escapeHtml(toolCallStatusLabel(tool.status))} · ${escapeHtml(tool.duration_ms)}ms</span>`).join("");
+  const approvals = (trace.approvals || []).map((item) => `<span class="mini-pill ${item.status === "pending" ? "danger" : ""}">${escapeHtml(item.action)} · ${escapeHtml(auditStatusLabel(item.status))}</span>`).join("");
   return `
     ${renderClosureReport(trace.closure_report)}
     <article class="audit-chain">
@@ -1554,8 +1601,8 @@ function renderAuditTraceSummary(trace) {
     <div class="audit-trace-event ${escapeHtml(riskTone(item.risk_level))}">
       <span></span>
       <div>
-        <b>${escapeHtml(item.phase || item.event_type || "-")}</b>
-        <p>${escapeHtml(item.summary || item.event_type || "-")}</p>
+        <b>${escapeHtml(item.phase || auditEventLabel(item.event_type) || "-")}</b>
+        <p>${escapeHtml(item.summary || auditEventLabel(item.event_type) || "-")}</p>
       </div>
       <time>${escapeHtml(String(item.created_at || "").slice(11, 19) || "-")}</time>
     </div>
@@ -1616,12 +1663,12 @@ function renderApproval(item) {
     : "";
   return `
     <article class="row-card">
-      <h3>${item.action} · ${item.status}</h3>
+      <h3>${escapeHtml(item.action)} · ${escapeHtml(auditStatusLabel(item.status))}</h3>
       <p>${item.command_preview || ""}</p>
       <p>${item.impact || ""}</p>
       <div class="row-meta">
         <span>${item.id}</span>
-        <span>${item.risk_level}</span>
+        <span>${escapeHtml(auditRiskLabel(item.risk_level))}</span>
         <span>${item.expires_at}</span>
       </div>
       ${actions}

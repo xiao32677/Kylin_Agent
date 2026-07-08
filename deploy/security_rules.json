@@ -1,0 +1,13 @@
+{
+  "rules": [
+    {
+      "rule_id": "custom_disable_audit",
+      "name": "disable audit protection",
+      "pattern": "\\b(systemctl\\s+(stop|disable)\\s+(auditd|a2-secops-agent)|rm\\s+-[^\\n]*f[^\\n]*/.*audit.*\\.log)\\b",
+      "risk_level": "forbidden",
+      "action": "block",
+      "message": "audit service or audit log tampering is blocked",
+      "enabled": true
+    }
+  ]
+}

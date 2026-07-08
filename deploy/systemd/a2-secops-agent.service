@@ -1,0 +1,21 @@
+[Unit]
+Description=A2 SecOps Agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ops-agent
+Group=ops-agent
+WorkingDirectory=/opt/a2-secops-agent
+EnvironmentFile=-/etc/a2-secops-agent/a2-secops-agent.env
+ExecStart=/usr/bin/python3 /opt/a2-secops-agent/backend/app/main.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/opt/a2-secops-agent/data
+
+[Install]
+WantedBy=multi-user.target

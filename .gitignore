@@ -1,0 +1,31 @@
+# Runtime state
+data/*.sqlite3
+data/*.sqlite3-*
+data/*.jsonl
+data/managed_files/
+
+# Python cache and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local secrets
+.env
+*.env
+!.env.example
+
+# Generated release workspaces and archives
+dist/archive_releases/
+dist/a2-secops-agent/
+dist/intro_package_stage/
+dist/ppt_work/
+dist/ppt_assets/
+dist/submission_docs/
+dist/90016317介绍/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

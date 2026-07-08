@@ -1,0 +1,308 @@
+{"kind":"deck","id":"pr/15s4e7","name":"Deck"}
+{"kind":"layout","layoutId":"ef1b7e4c-4245-45e7-9a8e-1e65a8b27a26","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"5b988cc3-9a9d-48a8-b0dd-5bbcc9194360","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/lyomym","slide":1,"title":"麒麟智维","textShapes":11}
+{"kind":"shape","id":"sh/1w7mp0bi","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/q5o7qpg3","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/jqh0fepk","slide":1,"bbox":[790,-110,520,520]}
+{"kind":"shape","id":"sh/8nqxs72x","slide":1,"bbox":[920,70,250,250]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":1,"text":"麒麟智维","textPreview":"麒麟智维","textChars":4,"textLines":1,"bbox":[72,76,680,58]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":1,"text":"安全运维助手","textPreview":"安全运维助手","textChars":6,"textLines":1,"bbox":[72,136,740,76]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":1,"text":"会理解、会执行、会审批、可追溯的智能运维 Agent","textPreview":"会理解、会执行、会审批、可追溯的智能运维 Agent","textChars":26,"textLines":1,"bbox":[78,238,780,42]}
+{"kind":"shape","id":"sh/crmhk3q5","slide":1,"bbox":[78,368,315,130]}
+{"kind":"shape","id":"sh/1cfa9w3m","slide":1,"bbox":[78,368,6,130]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":1,"text":"自然语言运维","textPreview":"自然语言运维","textChars":6,"textLines":1,"bbox":[102,390,267,30]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":1,"text":"把用户问题转成结构化意图和 Tool 计划","textPreview":"把用户问题转成结构化意图和 Tool 计划","textChars":21,"textLines":1,"bbox":[102,430,267,52]}
+{"kind":"shape","id":"sh/je9cvixc","slide":1,"bbox":[422,368,315,130]}
+{"kind":"shape","id":"sh/qtcj6tov","slide":1,"bbox":[422,368,6,130]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":1,"text":"安全闭环","textPreview":"安全闭环","textChars":4,"textLines":1,"bbox":[446,390,267,30]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":1,"text":"风险过滤、最小权限、审批、审计全链路","textPreview":"风险过滤、最小权限、审批、审计全链路","textChars":18,"textLines":1,"bbox":[446,430,267,52]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":1,"bbox":[766,368,315,130]}
+{"kind":"shape","id":"sh/q1orytsv","slide":1,"bbox":[766,368,6,130]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":1,"text":"知识沉淀","textPreview":"知识沉淀","textChars":4,"textLines":1,"bbox":[790,390,267,30]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":1,"text":"用户问答自动进入专属知识库","textPreview":"用户问答自动进入专属知识库","textChars":13,"textLines":1,"bbox":[790,430,267,52]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":1,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":1,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/mp0bi9s3","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"notes","id":"nt/lyomym","slide":1,"text":""}
+{"kind":"slide","id":"sl/i4ecc2","slide":2,"title":"BACKGROUND","textShapes":12}
+{"kind":"shape","id":"sh/u54zidon","slide":2,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/5sneloj2","slide":2,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/cbulwval","slide":2,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/neloj2t8","slide":2,"text":"BACKGROUND","textPreview":"BACKGROUND","textChars":10,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":2,"text":"项目背景与痛点","textPreview":"项目背景与痛点","textChars":7,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":2,"text":"普通 AI 只能回答，安全运维 Agent 需要能执行且可控","textPreview":"普通 AI 只能回答，安全运维 Agent 需要能执行且可控","textChars":30,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/czed8v6p","slide":2,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":2,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/yhgn29gr","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/kb6xkf6d","slide":2,"bbox":[86,220,310,205]}
+{"kind":"shape","id":"sh/9w3m94fu","slide":2,"bbox":[86,220,6,205]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":2,"text":"命令风险高","textPreview":"命令风险高","textChars":5,"textLines":1,"bbox":[110,242,262,30]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":2,"text":"误删、误重启、权限误改、危险注入可能直接造成业务中断。","textPreview":"误删、误重启、权限误改、危险注入可能直接造成业务中断。","textChars":27,"textLines":1,"bbox":[110,282,262,127]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":2,"bbox":[442,220,310,205]}
+{"kind":"shape","id":"sh/9knih4by","slide":2,"bbox":[442,220,6,205]}
+{"kind":"textbox","id":"sh/2t83itgf","slide":2,"text":"排障链路散","textPreview":"排障链路散","textChars":5,"textLines":1,"bbox":[466,242,262,30]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":2,"text":"资源、日志、端口、服务状态需要人工切换多个命令和页面。","textPreview":"资源、日志、端口、服务状态需要人工切换多个命令和页面。","textChars":27,"textLines":1,"bbox":[466,282,262,127]}
+{"kind":"shape","id":"sh/gvy90je9","slide":2,"bbox":[798,220,310,205]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":2,"bbox":[798,220,6,205]}
+{"kind":"textbox","id":"sh/d8bat47y","slide":2,"text":"AI 不可直接执行","textPreview":"AI 不可直接执行","textChars":9,"textLines":1,"bbox":[822,242,262,30]}
+{"kind":"textbox","id":"sh/knih4byh","slide":2,"text":"大模型回答不等于安全动作，必须先过滤、审批、审计。","textPreview":"大模型回答不等于安全动作，必须先过滤、审批、审计。","textChars":25,"textLines":1,"bbox":[822,282,262,127]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":2,"text":"目标：把“会聊天”升级为“会安全运维的 Agent”","textPreview":"目标：把“会聊天”升级为“会安全运维的 Agent”","textChars":26,"textLines":1,"bbox":[92,485,900,44]}
+{"kind":"notes","id":"nt/i4ecc2","slide":2,"text":""}
+{"kind":"slide","id":"sl/tymunu","slide":3,"title":"GOALS","textShapes":15}
+{"kind":"shape","id":"sh/a5gbq1or","slide":3,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/lszqtcj6","slide":3,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/s72x4nap","slide":3,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":3,"text":"GOALS","textPreview":"GOALS","textChars":5,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":3,"text":"项目目标","textPreview":"项目目标","textChars":4,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":3,"text":"让自然语言运维具备安全、权限和审计边界","textPreview":"让自然语言运维具备安全、权限和审计边界","textChars":19,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/sji5snel","slide":3,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":3,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/ap4r65wj","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/0je9cvix","slide":3,"bbox":[92,230,230,128]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[114,252,186,52]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":3,"text":"自然语言识别意图","textPreview":"自然语言识别意图","textChars":8,"textLines":1,"bbox":[116,308,178,36]}
+{"kind":"shape","id":"sh/byhgn29g","slide":3,"bbox":[356,230,230,128]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[378,252,186,52]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":3,"text":"风险过滤先于模型","textPreview":"风险过滤先于模型","textChars":8,"textLines":1,"bbox":[380,308,178,36]}
+{"kind":"shape","id":"sh/il0rqd4v","slide":3,"bbox":[620,230,230,128]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[642,252,186,52]}
+{"kind":"textbox","id":"sh/032lszqt","slide":3,"text":"最小权限执行代理","textPreview":"最小权限执行代理","textChars":8,"textLines":1,"bbox":[644,308,178,36]}
+{"kind":"shape","id":"sh/tovahoza","slide":3,"bbox":[884,230,230,128]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":3,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[906,252,186,52]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":3,"text":"审批后继续执行","textPreview":"审批后继续执行","textChars":7,"textLines":1,"bbox":[908,308,178,36]}
+{"kind":"shape","id":"sh/bat47y1k","slide":3,"bbox":[150,420,880,120]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":3,"bbox":[150,420,6,120]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":3,"text":"最终效果","textPreview":"最终效果","textChars":4,"textLines":1,"bbox":[174,442,832,30]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":3,"text":"用户用一句话提出运维需求，系统自动采集证据、判断风险、申请审批、执行受控 Tool，并把全过程写入可检索审计链。","textPreview":"用户用一句话提出运维需求，系统自动采集证据、判断风险、申请审批、执行受控 Tool，并把全过程写入可检索审计链。","textChars":56,"textLines":1,"bbox":[174,482,832,42]}
+{"kind":"notes","id":"nt/tymunu","slide":3,"text":""}
+{"kind":"slide","id":"sl/wps1li","slide":4,"title":"ARCHITECTURE","textShapes":13}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":4,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/tgfmlkjm","slide":4,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":4,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/bm58z25k","slide":4,"text":"ARCHITECTURE","textPreview":"ARCHITECTURE","textChars":12,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":4,"text":"系统总体架构","textPreview":"系统总体架构","textChars":6,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":4,"text":"前端控制台 + Agent 编排 + 安全护栏 + 受控 Tool + 审计知识库","textPreview":"前端控制台 + Agent 编排 + 安全护栏 + 受控 Tool + 审计知识库","textChars":41,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/47y1kre1","slide":4,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":4,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":4,"bbox":[78,250,165,62]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":4,"text":"Web 控制台","textPreview":"Web 控制台","textChars":7,"textLines":1,"bbox":[92,267,137,28]}
+{"kind":"shape","id":"sh/61032lsz","slide":4,"bbox":[300,250,165,62]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":4,"text":"Agent 编排","textPreview":"Agent 编排","textChars":8,"textLines":1,"bbox":[314,267,137,28]}
+{"kind":"shape","id":"sh/oj2t83it","slide":4,"bbox":[522,178,165,62]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":4,"text":"安全护栏","textPreview":"安全护栏","textChars":4,"textLines":1,"bbox":[536,195,137,28]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":4,"bbox":[522,322,165,62]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":4,"text":"审批中心","textPreview":"审批中心","textChars":4,"textLines":1,"bbox":[536,339,137,28]}
+{"kind":"shape","id":"sh/onyd0z61","slide":4,"bbox":[744,250,165,62]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":4,"text":"受控 Tool","textPreview":"受控 Tool","textChars":7,"textLines":1,"bbox":[758,267,137,28]}
+{"kind":"shape","id":"sh/1cfa9w3m","slide":4,"bbox":[966,178,165,62]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":4,"text":"审计日志","textPreview":"审计日志","textChars":4,"textLines":1,"bbox":[980,195,137,28]}
+{"kind":"shape","id":"sh/j6tovaho","slide":4,"bbox":[966,322,165,62]}
+{"kind":"textbox","id":"sh/ulwval87","slide":4,"text":"知识库 RAG","textPreview":"知识库 RAG","textChars":7,"textLines":1,"bbox":[980,339,137,28]}
+{"kind":"shape","id":"sh/1kre1w7m","slide":4,"bbox":[244,281,55,0]}
+{"kind":"shape","id":"sh/c3ylc7u5","slide":4,"bbox":[466,281,55,0]}
+{"kind":"shape","id":"sh/ji5snelo","slide":4,"bbox":[688,281,55,0]}
+{"kind":"shape","id":"sh/uxc3ylc7","slide":4,"bbox":[910,281,55,0]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":4,"text":"部署：systemd 托管，ops-agent 低权限账号运行，sudoers 仅开放诊断白名单","textPreview":"部署：systemd 托管，ops-agent 低权限账号运行，sudoers 仅开放诊断白名单","textChars":48,"textLines":1,"bbox":[112,494,920,38]}
+{"kind":"notes","id":"nt/wps1li","slide":4,"text":""}
+{"kind":"slide","id":"sl/9tg734","slide":5,"title":"AGENT PIPELINE","textShapes":21}
+{"kind":"shape","id":"sh/6tovahoz","slide":5,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/dg7adsji","slide":5,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/ovahoza1","slide":5,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":5,"text":"AGENT PIPELINE","textPreview":"AGENT PIPELINE","textChars":14,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":5,"text":"Agent 闭环流程","textPreview":"Agent 闭环流程","textChars":10,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":5,"text":"七步链路把运维请求变成可审计结果","textPreview":"七步链路把运维请求变成可审计结果","textChars":16,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/onyd0z61","slide":5,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":5,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/4zidonyd","slide":5,"bbox":[82,262,78,78]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":5,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[102,276,38,30]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":5,"text":"采集","textPreview":"采集","textChars":2,"textLines":1,"bbox":[72,360,100,30]}
+{"kind":"shape","id":"sh/fepkzupw","slide":5,"bbox":[160,301,78,0]}
+{"kind":"shape","id":"sh/4r65wjud","slide":5,"bbox":[240,262,78,78]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":5,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[260,276,38,30]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":5,"text":"分析","textPreview":"分析","textChars":2,"textLines":1,"bbox":[230,360,100,30]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":5,"bbox":[318,301,78,0]}
+{"kind":"shape","id":"sh/4fu18jqh","slide":5,"bbox":[398,262,78,78]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":5,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[418,276,38,30]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":5,"text":"决策","textPreview":"决策","textChars":2,"textLines":1,"bbox":[388,360,100,30]}
+{"kind":"shape","id":"sh/sji5snel","slide":5,"bbox":[476,301,78,0]}
+{"kind":"shape","id":"sh/3ylc7u54","slide":5,"bbox":[556,262,78,78]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":5,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[576,276,38,30]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":5,"text":"执行","textPreview":"执行","textChars":2,"textLines":1,"bbox":[546,360,100,30]}
+{"kind":"shape","id":"sh/s72x4nap","slide":5,"bbox":[634,301,78,0]}
+{"kind":"shape","id":"sh/3m94fu18","slide":5,"bbox":[714,262,78,78]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":5,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[734,276,38,30]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":5,"text":"验证","textPreview":"验证","textChars":2,"textLines":1,"bbox":[704,360,100,30]}
+{"kind":"shape","id":"sh/s36hcrmh","slide":5,"bbox":[792,301,78,0]}
+{"kind":"shape","id":"sh/2x4nap4r","slide":5,"bbox":[872,262,78,78]}
+{"kind":"textbox","id":"sh/vixczed8","slide":5,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[892,276,38,30]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":5,"text":"知识","textPreview":"知识","textChars":2,"textLines":1,"bbox":[862,360,100,30]}
+{"kind":"shape","id":"sh/donyd0z6","slide":5,"bbox":[950,301,78,0]}
+{"kind":"shape","id":"sh/6psfil0r","slide":5,"bbox":[1030,262,78,78]}
+{"kind":"textbox","id":"sh/val87ed8","slide":5,"text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1050,276,38,30]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":5,"text":"总结","textPreview":"总结","textChars":2,"textLines":1,"bbox":[1020,360,100,30]}
+{"kind":"shape","id":"sh/dcbulwva","slide":5,"bbox":[146,455,910,98]}
+{"kind":"shape","id":"sh/2lszqtcj","slide":5,"bbox":[146,455,6,98]}
+{"kind":"textbox","id":"sh/v6psfil0","slide":5,"text":"关键区别","textPreview":"关键区别","textChars":4,"textLines":1,"bbox":[170,477,862,30]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":5,"text":"不是把问题转发给模型，而是先判断风险，再选择受控 Tool，最后形成可追溯的闭环报告。","textPreview":"不是把问题转发给模型，而是先判断风险，再选择受控 Tool，最后形成可追溯的闭环报告。","textChars":43,"textLines":1,"bbox":[170,517,862,20]}
+{"kind":"notes","id":"nt/9tg734","slide":5,"text":""}
+{"kind":"slide","id":"sl/h7otec","slide":6,"title":"GUARDRAIL","textShapes":13}
+{"kind":"shape","id":"sh/0nuxc3yl","slide":6,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/72x4nap4","slide":6,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":6,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":6,"text":"GUARDRAIL","textPreview":"GUARDRAIL","textChars":9,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/0z61032l","slide":6,"text":"安全风险过滤","textPreview":"安全风险过滤","textChars":6,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":6,"text":"危险请求被拦截，高风险动作进入审批","textPreview":"危险请求被拦截，高风险动作进入审批","textChars":17,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/itgfmlkj","slide":6,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":6,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/u18jqh0f","slide":6,"bbox":[78,210,330,140]}
+{"kind":"shape","id":"sh/jm1cfa9w","slide":6,"bbox":[78,210,6,140]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":6,"text":"危险命令","textPreview":"危险命令","textChars":4,"textLines":1,"bbox":[102,232,282,30]}
+{"kind":"textbox","id":"sh/1orytsvu","slide":6,"text":"rm -rf、chmod 777、chown、kill、包管理变更、关键目录写入","textPreview":"rm -rf、chmod 777、chown、kill、包管理变更、关键目录写入","textChars":40,"textLines":1,"bbox":[102,272,282,62]}
+{"kind":"shape","id":"sh/u9knih4b","slide":6,"bbox":[474,210,330,140]}
+{"kind":"shape","id":"sh/judg7ads","slide":6,"bbox":[474,210,6,140]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":6,"text":"服务变更","textPreview":"服务变更","textChars":4,"textLines":1,"bbox":[498,232,282,30]}
+{"kind":"textbox","id":"sh/1032lszq","slide":6,"text":"systemctl restart / stop / disable 等动作识别为高风险","textPreview":"systemctl restart / stop / disable 等动作识别为高风险","textChars":44,"textLines":1,"bbox":[498,272,282,62]}
+{"kind":"shape","id":"sh/udg7adsj","slide":6,"bbox":[870,210,330,140]}
+{"kind":"shape","id":"sh/nyd0z610","slide":6,"bbox":[870,210,6,140]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":6,"text":"提示词注入","textPreview":"提示词注入","textChars":5,"textLines":1,"bbox":[894,232,282,30]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":6,"text":"“忽略安全规则”“直接执行危险命令”等绕过意图直接拦截","textPreview":"“忽略安全规则”“直接执行危险命令”等绕过意图直接拦截","textChars":27,"textLines":1,"bbox":[894,272,282,62]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":6,"text":"安全检查在模型调用之前完成：被拦截请求不会执行，也不会发送给外部模型","textPreview":"安全检查在模型调用之前完成：被拦截请求不会执行，也不会发送给外部模型","textChars":34,"textLines":1,"bbox":[104,438,990,46]}
+{"kind":"shape","id":"sh/4fu18jqh","slide":6,"bbox":[252,522,720,52]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":6,"text":"check_text / check_command / path_policy / payload_hash","textPreview":"check_text / check_command / path_policy / payload_hash","textChars":55,"textLines":1,"bbox":[278,535,668,26]}
+{"kind":"notes","id":"nt/h7otec","slide":6,"text":""}
+{"kind":"slide","id":"sl/75dyo5","slide":7,"title":"LEAST PRIVILEGE","textShapes":12}
+{"kind":"shape","id":"sh/vmtwra5g","slide":7,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":7,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/dsji5sne","slide":7,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":7,"text":"LEAST PRIVILEGE","textPreview":"LEAST PRIVILEGE","textChars":15,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":7,"text":"最小权限执行代理","textPreview":"最小权限执行代理","textChars":8,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":7,"text":"让 Agent 能执行，但不能越权裸跑命令","textPreview":"让 Agent 能执行，但不能越权裸跑命令","textChars":21,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/d4vmtwra","slide":7,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":7,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/vy90je9c","slide":7,"bbox":[90,220,300,210]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":7,"bbox":[90,220,6,210]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":7,"text":"ops-agent","textPreview":"ops-agent","textChars":9,"textLines":1,"bbox":[114,242,252,30]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":7,"text":"服务以低权限系统账号运行，不能默认拥有 root 权限。","textPreview":"服务以低权限系统账号运行，不能默认拥有 root 权限。","textChars":28,"textLines":1,"bbox":[114,282,252,132]}
+{"kind":"shape","id":"sh/vmtwra5g","slide":7,"bbox":[490,220,300,210]}
+{"kind":"shape","id":"sh/61032lsz","slide":7,"bbox":[490,220,6,210]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":7,"text":"sudoers 白名单","textPreview":"sudoers 白名单","textChars":11,"textLines":1,"bbox":[514,242,252,30]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":7,"text":"仅允许 journalctl、systemctl status、ss、lsof、dmesg 等必要命令。","textPreview":"仅允许 journalctl、systemctl status、ss、lsof、dmesg 等必要命令。","textChars":52,"textLines":1,"bbox":[514,282,252,132]}
+{"kind":"shape","id":"sh/vahoza1g","slide":7,"bbox":[890,220,300,210]}
+{"kind":"shape","id":"sh/6tovahoz","slide":7,"bbox":[890,220,6,210]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":7,"text":"argv 执行","textPreview":"argv 执行","textChars":7,"textLines":1,"bbox":[914,242,252,30]}
+{"kind":"textbox","id":"sh/7adsji5s","slide":7,"text":"Tool 使用参数数组执行命令，避免 shell 拼接注入。","textPreview":"Tool 使用参数数组执行命令，避免 shell 拼接注入。","textChars":30,"textLines":1,"bbox":[914,282,252,132]}
+{"kind":"textbox","id":"sh/wval87ed","slide":7,"text":"变更类 Tool 必须审批：release_port_guarded / delete_file_guarded / write_text_file_guarded","textPreview":"变更类 Tool 必须审批：release_port_guarded / delete_file_guarded / write_text_file_guarded","textChars":82,"textLines":1,"bbox":[100,508,1000,32]}
+{"kind":"notes","id":"nt/75dyo5","slide":7,"text":""}
+{"kind":"slide","id":"sl/3aeba8","slide":8,"title":"APPROVAL & AUDIT","textShapes":6}
+{"kind":"shape","id":"sh/gbq1oryt","slide":8,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/nuxc3ylc","slide":8,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/y90je9cv","slide":8,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/58z25kb6","slide":8,"text":"APPROVAL & AUDIT","textPreview":"APPROVAL & AUDIT","textChars":16,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/gn29gr2p","slide":8,"text":"审批中心与审计追踪","textPreview":"审批中心与审计追踪","textChars":9,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":8,"text":"高风险操作必须有人确认，全流程可以回放","textPreview":"高风险操作必须有人确认，全流程可以回放","textChars":19,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":8,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":8,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/2hwfyxob","slide":8,"bbox":[62,200,530,310]}
+{"kind":"shape","id":"sh/kjm1cfa9","slide":8,"bbox":[640,200,530,310]}
+{"kind":"textbox","id":"sh/2p8nqxs7","slide":8,"text":"审批校验：pending 状态、未过期、payload_hash 未变化、不能重复 approve","textPreview":"审批校验：pending 状态、未过期、payload_hash 未变化、不能重复 approve","textChars":49,"textLines":1,"bbox":[86,535,1020,34]}
+{"kind":"image","id":"im/gr2p8nqx","slide":8,"name":"","geometry":"roundRect","alt":"approvals.png","bbox":[72,210,510,290]}
+{"kind":"image","id":"im/ylc7u54z","slide":8,"name":"","geometry":"roundRect","alt":"audit.png","bbox":[650,210,510,290]}
+{"kind":"notes","id":"nt/3aeba8","slide":8,"text":""}
+{"kind":"slide","id":"sl/dpp900","slide":9,"title":"KNOWLEDGE RAG","textShapes":11}
+{"kind":"shape","id":"sh/re1w7mp0","slide":9,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":9,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/9knih4by","slide":9,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":9,"text":"KNOWLEDGE RAG","textPreview":"KNOWLEDGE RAG","textChars":13,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":9,"text":"专属知识库 RAG","textPreview":"专属知识库 RAG","textChars":9,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":9,"text":"从一次问答沉淀为下一次排障经验","textPreview":"从一次问答沉淀为下一次排障经验","textChars":15,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/9w3m94fu","slide":9,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/2hwfyxob","slide":9,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/7ed8bat4","slide":9,"bbox":[68,200,690,348]}
+{"kind":"shape","id":"sh/pkzupwb2","slide":9,"bbox":[810,220,330,96]}
+{"kind":"shape","id":"sh/0z61032l","slide":9,"bbox":[810,220,6,96]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":9,"text":"多层知识","textPreview":"多层知识","textChars":4,"textLines":1,"bbox":[834,242,282,30]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":9,"text":"Linux 知识、历史故障、运维规范、用户问答","textPreview":"Linux 知识、历史故障、运维规范、用户问答","textChars":23,"textLines":1,"bbox":[834,282,282,18]}
+{"kind":"shape","id":"sh/p8nqxs72","slide":9,"bbox":[810,338,330,96]}
+{"kind":"shape","id":"sh/0nuxc3yl","slide":9,"bbox":[810,338,6,96]}
+{"kind":"textbox","id":"sh/7y1kre1w","slide":9,"text":"自动引用","textPreview":"自动引用","textChars":4,"textLines":1,"bbox":[834,360,282,30]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":9,"text":"回答中引用相关知识，避免泛泛而谈","textPreview":"回答中引用相关知识，避免泛泛而谈","textChars":16,"textLines":1,"bbox":[834,400,282,18]}
+{"kind":"shape","id":"sh/mlkjm1cf","slide":9,"bbox":[810,456,330,96]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":9,"bbox":[810,456,6,96]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":9,"text":"持续沉淀","textPreview":"持续沉淀","textChars":4,"textLines":1,"bbox":[834,478,282,30]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":9,"text":"每次对话可写入专属经验库","textPreview":"每次对话可写入专属经验库","textChars":12,"textLines":1,"bbox":[834,518,282,18]}
+{"kind":"image","id":"im/l87ed8ba","slide":9,"name":"","geometry":"roundRect","alt":"knowledge.png","bbox":[78,210,670,328]}
+{"kind":"notes","id":"nt/dpp900","slide":9,"text":""}
+{"kind":"slide","id":"sl/1zwvbb","slide":10,"title":"PRODUCT DEMO","textShapes":6}
+{"kind":"shape","id":"sh/87ed8bat","slide":10,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":10,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/q1orytsv","slide":10,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":10,"text":"PRODUCT DEMO","textPreview":"PRODUCT DEMO","textChars":12,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":10,"text":"系统界面展示","textPreview":"系统界面展示","textChars":6,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":10,"text":"真实控制台：对话、监控、Tool 管理一体化","textPreview":"真实控制台：对话、监控、Tool 管理一体化","textChars":22,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/qtcj6tov","slide":10,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":10,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":10,"bbox":[62,180,555,355]}
+{"kind":"shape","id":"sh/gn29gr2p","slide":10,"bbox":[665,180,555,355]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":10,"text":"左：Agent 分析链路与实时监控  |  右：Tool 注册、启停、健康检查","textPreview":"左：Agent 分析链路与实时监控  |  右：Tool 注册、启停、健康检查","textChars":39,"textLines":1,"bbox":[110,548,960,30]}
+{"kind":"image","id":"im/ovahoza1","slide":10,"name":"","geometry":"roundRect","alt":"ops_console.png","bbox":[72,190,535,335]}
+{"kind":"image","id":"im/6tovahoz","slide":10,"name":"","geometry":"roundRect","alt":"tools.png","bbox":[675,190,535,335]}
+{"kind":"notes","id":"nt/1zwvbb","slide":10,"text":""}
+{"kind":"slide","id":"sl/pv2mh0","slide":11,"title":"TEST & PERFORMANCE","textShapes":15}
+{"kind":"shape","id":"sh/r65wjudg","slide":11,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":11,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/9cvixcze","slide":11,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":11,"text":"TEST & PERFORMANCE","textPreview":"TEST & PERFORMANCE","textChars":18,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":11,"text":"测试与性能结果","textPreview":"测试与性能结果","textChars":7,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":11,"text":"核心功能通过冒烟测试，关键指标满足目标","textPreview":"核心功能通过冒烟测试，关键指标满足目标","textChars":19,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/5o7qpg3e","slide":11,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":11,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/fa9w3m94","slide":11,"bbox":[90,220,230,128]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":11,"text":"31.57ms","textPreview":"31.57ms","textChars":7,"textLines":1,"bbox":[112,242,186,52]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":11,"text":"风险检查 P95，目标 < 100ms","textPreview":"风险检查 P95，目标 < 100ms","textChars":19,"textLines":1,"bbox":[114,298,178,36]}
+{"kind":"shape","id":"sh/8v6psfil","slide":11,"bbox":[372,220,230,128]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":11,"text":"2333ms","textPreview":"2333ms","textChars":6,"textLines":1,"bbox":[394,242,186,52]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":11,"text":"20 并发监控 P95，目标 < 5000ms","textPreview":"20 并发监控 P95，目标 < 5000ms","textChars":23,"textLines":1,"bbox":[396,298,178,36]}
+{"kind":"shape","id":"sh/x4nap4r6","slide":11,"bbox":[654,220,230,128]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":11,"text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[676,242,186,52]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":11,"text":"并发会话完成，无错误","textPreview":"并发会话完成，无错误","textChars":10,"textLines":1,"bbox":[678,298,178,36]}
+{"kind":"shape","id":"sh/q1orytsv","slide":11,"bbox":[936,220,230,128]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":11,"text":"11+","textPreview":"11+","textChars":3,"textLines":1,"bbox":[958,242,186,52]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":11,"text":"核心功能用例覆盖","textPreview":"核心功能用例覆盖","textChars":8,"textLines":1,"bbox":[960,298,178,36]}
+{"kind":"shape","id":"sh/g7adsji5","slide":11,"bbox":[145,430,900,110]}
+{"kind":"shape","id":"sh/9s36hcrm","slide":11,"bbox":[145,430,6,110]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":11,"text":"测试覆盖","textPreview":"测试覆盖","textChars":4,"textLines":1,"bbox":[169,452,852,30]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":11,"text":"登录鉴权、RBAC、安全拦截、审批防重放、端口诊断、CPU 诊断、知识库、审计导出、Tool 启停和健康检查。","textPreview":"登录鉴权、RBAC、安全拦截、审批防重放、端口诊断、CPU 诊断、知识库、审计导出、Tool 启停和健康检查。","textChars":55,"textLines":1,"bbox":[169,492,852,32]}
+{"kind":"notes","id":"nt/pv2mh0","slide":11,"text":""}
+{"kind":"slide","id":"sl/qhpxv6","slide":12,"title":"VALUE","textShapes":12}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":12,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/mtwra5gb","slide":12,"bbox":[0,0,22,720]}
+{"kind":"shape","id":"sh/fepkzupw","slide":12,"bbox":[930,-170,420,420]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":12,"text":"VALUE","textPreview":"VALUE","textChars":5,"textLines":1,"bbox":[64,36,500,28]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":12,"text":"创新点与总结","textPreview":"创新点与总结","textChars":6,"textLines":1,"bbox":[64,78,760,62]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":12,"text":"从“聊天助手”升级为“安全可执行运维 Agent”","textPreview":"从“聊天助手”升级为“安全可执行运维 Agent”","textChars":25,"textLines":1,"bbox":[66,137,790,38]}
+{"kind":"shape","id":"sh/f6dcbulw","slide":12,"bbox":[64,662,1152,0]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":12,"text":"麒麟智维安全运维助手","textPreview":"麒麟智维安全运维助手","textChars":10,"textLines":1,"bbox":[64,674,360,22]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1160,672,60,24]}
+{"kind":"shape","id":"sh/lkjm1cfa","slide":12,"bbox":[92,200,330,145]}
+{"kind":"shape","id":"sh/szqtcj6t","slide":12,"bbox":[92,200,6,145]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":12,"text":"可执行","textPreview":"可执行","textChars":3,"textLines":1,"bbox":[116,222,282,30]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":12,"text":"能够自动采集系统证据并调用受控 Tool，而不是只给文字建议。","textPreview":"能够自动采集系统证据并调用受控 Tool，而不是只给文字建议。","textChars":31,"textLines":1,"bbox":[116,262,282,67]}
+{"kind":"shape","id":"sh/l87ed8ba","slide":12,"bbox":[474,200,330,145]}
+{"kind":"shape","id":"sh/sneloj2t","slide":12,"bbox":[474,200,6,145]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":12,"text":"可控制","textPreview":"可控制","textChars":3,"textLines":1,"bbox":[498,222,282,30]}
+{"kind":"textbox","id":"sh/ahoza1gv","slide":12,"text":"安全护栏、审批中心、最小权限账号和 sudoers 白名单共同约束执行边界。","textPreview":"安全护栏、审批中心、最小权限账号和 sudoers 白名单共同约束执行边界。","textChars":38,"textLines":1,"bbox":[498,262,282,67]}
+{"kind":"shape","id":"sh/lwval87e","slide":12,"bbox":[856,200,330,145]}
+{"kind":"shape","id":"sh/wb2hwfyx","slide":12,"bbox":[856,200,6,145]}
+{"kind":"textbox","id":"sh/sji5snel","slide":12,"text":"可追溯","textPreview":"可追溯","textChars":3,"textLines":1,"bbox":[880,222,282,30]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":12,"text":"每次请求都有 trace_id，形成从用户输入到最终结论的审计闭环。","textPreview":"每次请求都有 trace_id，形成从用户输入到最终结论的审计闭环。","textChars":34,"textLines":1,"bbox":[880,262,282,67]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":12,"text":"项目已具备部署到麒麟环境的完整链路：安装脚本、systemd 服务、RBAC、审计、知识库和测试报告。","textPreview":"项目已具备部署到麒麟环境的完整链路：安装脚本、systemd 服务、RBAC、审计、知识库和测试报告。","textChars":51,"textLines":1,"bbox":[112,462,980,58]}
+{"kind":"notes","id":"nt/qhpxv6","slide":12,"text":""}

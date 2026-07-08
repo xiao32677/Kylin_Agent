@@ -1,0 +1,6 @@
+Defaults:ops-agent !requiretty
+ops-agent ALL=(root) NOPASSWD: /usr/bin/journalctl *
+ops-agent ALL=(root) NOPASSWD: /usr/bin/systemctl status *
+ops-agent ALL=(root) NOPASSWD: /usr/bin/ss *
+ops-agent ALL=(root) NOPASSWD: /usr/bin/lsof *
+ops-agent ALL=(root) NOPASSWD: /usr/bin/dmesg *

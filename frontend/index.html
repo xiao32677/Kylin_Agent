@@ -345,6 +345,12 @@
                     <button type="button" data-audit-date="30d">近30天</button>
                   </div>
                 </div>
+                <div class="audit-trend-legend">
+                  <span><i class="all"></i>审计总量</span>
+                  <span><i class="risk"></i>风险事件</span>
+                  <span><i class="tools"></i>工具调用</span>
+                  <em id="auditTrendHint">纵轴为日志条数，横轴为真实时间</em>
+                </div>
                 <svg id="auditTrendChart" class="audit-trend-chart" viewBox="0 0 760 260" preserveAspectRatio="none"></svg>
               </article>
               <article class="audit-chart-card audit-risk-card">

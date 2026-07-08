@@ -875,17 +875,32 @@ function chartPathFromPoints(values, width, height, maxValue) {
 function renderAuditTrend(items) {
   const svg = $("#auditTrendChart");
   if (!svg) return;
-  const { buckets } = buildAuditTrend(items);
+  const { buckets, mode } = buildAuditTrend(items);
   const all = buckets.map((item) => item.all);
   const risk = buckets.map((item) => item.risk);
   const tools = buckets.map((item) => item.tools);
   const maxValue = Math.max(...all, ...risk, ...tools, 1);
   const line = (values, cls) => `<path class="audit-line ${cls}" d="${chartPathFromPoints(values, 760, 260, maxValue)}"></path>`;
+  const totalAll = all.reduce((sum, value) => sum + value, 0);
+  const totalRisk = risk.reduce((sum, value) => sum + value, 0);
+  const totalTools = tools.reduce((sum, value) => sum + value, 0);
+  const trendHint = $("#auditTrendHint");
+  if (trendHint) {
+    const bucketLabel = mode === "hour" ? "按小时统计" : mode === "day" ? "按日期统计" : mode === "range" ? "按时间段统计" : "暂无有效时间数据";
+    trendHint.textContent = `纵轴为条数，横轴为真实时间；${bucketLabel} · 审计总量 ${totalAll} 条 · 风险事件 ${totalRisk} 条 · 工具调用 ${totalTools} 次`;
+  }
   const labelIndexes = [0, 0.25, 0.5, 0.75, 1].map((ratio) => Math.min(buckets.length - 1, Math.round((buckets.length - 1) * ratio)));
   const labelX = [50, 214, 388, 562, 714];
   const labels = labelIndexes.map((index, labelIndex) => `<text x="${labelX[labelIndex]}" y="246">${escapeHtml(buckets[index]?.label || "-")}</text>`).join("");
   svg.innerHTML = `
     <path class="audit-chart-grid" d="M48,36 H744 M48,84 H744 M48,132 H744 M48,180 H744 M48,228 H744 M48,36 V228 M222,36 V228 M396,36 V228 M570,36 V228 M744,36 V228"></path>
+    <g class="audit-axis audit-axis-y">
+      <text x="16" y="38">条数</text>
+      <text x="28" y="84">${escapeHtml(String(Math.ceil(maxValue * 0.75)))}</text>
+      <text x="28" y="132">${escapeHtml(String(Math.ceil(maxValue * 0.5)))}</text>
+      <text x="28" y="180">${escapeHtml(String(Math.ceil(maxValue * 0.25)))}</text>
+      <text x="34" y="230">0</text>
+    </g>
     ${line(all, "all")}
     ${line(risk, "risk")}
     ${line(tools, "tools")}

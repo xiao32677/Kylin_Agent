@@ -4489,8 +4489,57 @@ h1 {
 
 .audit-trend-chart {
   width: 100%;
-  height: calc(100% - 44px);
+  height: calc(100% - 78px);
   min-height: 166px;
+}
+
+.audit-trend-legend {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 2px 0 8px;
+  color: #dcecff;
+  font-size: 12px;
+}
+
+.audit-trend-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.audit-trend-legend i {
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
+  display: inline-block;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.audit-trend-legend i.all {
+  color: #12a8ff;
+  background: #12a8ff;
+}
+
+.audit-trend-legend i.risk {
+  color: #ff5b6d;
+  background: #ff5b6d;
+}
+
+.audit-trend-legend i.tools {
+  color: #18d59b;
+  background: #18d59b;
+}
+
+.audit-trend-legend em {
+  min-width: 260px;
+  flex: 1 1 320px;
+  color: #8fa5ba;
+  font-style: normal;
+  line-height: 1.45;
 }
 
 .audit-chart-grid {
@@ -4513,6 +4562,11 @@ h1 {
 .audit-axis text {
   fill: #7f95aa;
   font-size: 12px;
+}
+
+.audit-axis-y text:first-child {
+  fill: #cfe6ff;
+  font-weight: 700;
 }
 
 .audit-risk-content {

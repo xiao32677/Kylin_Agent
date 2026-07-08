@@ -759,17 +759,60 @@ function averagePendingAge(items) {
   return `${Math.max(minutes, 0)} 分钟`;
 }
 
+function formatAuditAxisLabel(date, mode) {
+  if (!(date instanceof Date) || Number.isNaN(date.getTime())) return "-";
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hour = String(date.getHours()).padStart(2, "0");
+  if (mode === "hour") return `${hour}:00`;
+  if (mode === "day") return `${month}-${day}`;
+  return `${month}-${day} ${hour}:00`;
+}
+
 function buildAuditTrend(items) {
-  const buckets = Array.from({ length: 24 }, (_, hour) => ({ hour, all: 0, risk: 0, tools: 0 }));
-  for (const item of items) {
-    const date = new Date(item.created_at || Date.now());
-    const hour = Number.isNaN(date.getHours()) ? 0 : date.getHours();
-    const bucket = buckets[Math.min(Math.max(hour, 0), 23)];
+  const datedItems = items
+    .map((item) => ({ item, date: new Date(item.created_at || "") }))
+    .filter(({ date }) => !Number.isNaN(date.getTime()))
+    .sort((a, b) => a.date - b.date);
+  if (!datedItems.length) {
+    return { buckets: Array.from({ length: 6 }, (_, index) => ({ label: "-", all: 0, risk: 0, tools: 0, index })), mode: "empty" };
+  }
+
+  const first = datedItems[0].date;
+  const last = datedItems[datedItems.length - 1].date;
+  const spanMs = Math.max(last - first, 1);
+  const oneDay = 86400000;
+  let mode = "range";
+  let bucketCount = 12;
+  let bucketMs = spanMs / bucketCount;
+  let start = new Date(first);
+
+  if (state.auditFilters.date === "today" || spanMs <= oneDay) {
+    mode = "hour";
+    start = new Date(first.getFullYear(), first.getMonth(), first.getDate(), 0, 0, 0, 0);
+    bucketCount = 24;
+    bucketMs = 3600000;
+  } else if (state.auditFilters.date === "7d" || state.auditFilters.date === "30d" || spanMs <= 45 * oneDay) {
+    mode = "day";
+    start = new Date(first.getFullYear(), first.getMonth(), first.getDate(), 0, 0, 0, 0);
+    const end = new Date(last.getFullYear(), last.getMonth(), last.getDate(), 0, 0, 0, 0);
+    bucketCount = Math.max(1, Math.min(45, Math.round((end - start) / oneDay) + 1));
+    bucketMs = oneDay;
+  }
+
+  const buckets = Array.from({ length: bucketCount }, (_, index) => {
+    const bucketDate = new Date(start.getTime() + index * bucketMs);
+    return { label: formatAuditAxisLabel(bucketDate, mode), all: 0, risk: 0, tools: 0, index };
+  });
+
+  for (const { item, date } of datedItems) {
+    const index = Math.min(Math.max(Math.floor((date - start) / bucketMs), 0), bucketCount - 1);
+    const bucket = buckets[index];
     bucket.all += 1;
     if (["medium", "high", "forbidden"].includes(item.risk_level)) bucket.risk += 1;
     if (item.event_type === "tool_call") bucket.tools += 1;
   }
-  return buckets;
+  return { buckets, mode };
 }
 
 function chartPathFromPoints(values, width, height, maxValue) {
@@ -785,23 +828,22 @@ function chartPathFromPoints(values, width, height, maxValue) {
 function renderAuditTrend(items) {
   const svg = $("#auditTrendChart");
   if (!svg) return;
-  const buckets = buildAuditTrend(items);
+  const { buckets } = buildAuditTrend(items);
   const all = buckets.map((item) => item.all);
   const risk = buckets.map((item) => item.risk);
   const tools = buckets.map((item) => item.tools);
   const maxValue = Math.max(...all, ...risk, ...tools, 1);
   const line = (values, cls) => `<path class="audit-line ${cls}" d="${chartPathFromPoints(values, 760, 260, maxValue)}"></path>`;
+  const labelIndexes = [0, 0.25, 0.5, 0.75, 1].map((ratio) => Math.min(buckets.length - 1, Math.round((buckets.length - 1) * ratio)));
+  const labelX = [50, 214, 388, 562, 714];
+  const labels = labelIndexes.map((index, labelIndex) => `<text x="${labelX[labelIndex]}" y="246">${escapeHtml(buckets[index]?.label || "-")}</text>`).join("");
   svg.innerHTML = `
     <path class="audit-chart-grid" d="M48,36 H744 M48,84 H744 M48,132 H744 M48,180 H744 M48,228 H744 M48,36 V228 M222,36 V228 M396,36 V228 M570,36 V228 M744,36 V228"></path>
     ${line(all, "all")}
     ${line(risk, "risk")}
     ${line(tools, "tools")}
     <g class="audit-axis">
-      <text x="50" y="246">00:00</text>
-      <text x="214" y="246">06:00</text>
-      <text x="388" y="246">12:00</text>
-      <text x="562" y="246">18:00</text>
-      <text x="714" y="246">24:00</text>
+      ${labels}
     </g>
   `;
 }

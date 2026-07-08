@@ -862,12 +862,15 @@ function buildAuditTrend(items) {
   return { buckets, mode };
 }
 
-function chartPathFromPoints(values, width, height, maxValue) {
+function chartPathFromPoints(values, bounds, maxValue) {
   if (!values.length) return "";
+  const { left, right, top, bottom } = bounds;
+  const width = right - left;
+  const height = bottom - top;
   const ceiling = Math.max(maxValue || 0, ...values, 1);
   return values.map((value, index) => {
-    const x = values.length === 1 ? width : (index / (values.length - 1)) * width;
-    const y = height - (Math.min(value, ceiling) / ceiling) * (height - 44) - 22;
+    const x = values.length === 1 ? right : left + (index / (values.length - 1)) * width;
+    const y = bottom - (Math.min(value, ceiling) / ceiling) * height;
     return `${index === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
   }).join(" ");
 }
@@ -880,7 +883,8 @@ function renderAuditTrend(items) {
   const risk = buckets.map((item) => item.risk);
   const tools = buckets.map((item) => item.tools);
   const maxValue = Math.max(...all, ...risk, ...tools, 1);
-  const line = (values, cls) => `<path class="audit-line ${cls}" d="${chartPathFromPoints(values, 760, 260, maxValue)}"></path>`;
+  const chartBounds = { left: 48, right: 744, top: 36, bottom: 228 };
+  const line = (values, cls) => `<path class="audit-line ${cls}" d="${chartPathFromPoints(values, chartBounds, maxValue)}"></path>`;
   const totalAll = all.reduce((sum, value) => sum + value, 0);
   const totalRisk = risk.reduce((sum, value) => sum + value, 0);
   const totalTools = tools.reduce((sum, value) => sum + value, 0);

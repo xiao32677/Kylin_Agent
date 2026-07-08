@@ -1352,7 +1352,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 14px;
-  background: #fbfdff;
+  background: rgba(10, 24, 39, 0.82);
 }
 
 .settings-card h3 {
@@ -1376,6 +1376,7 @@ h2 {
 .settings-card b {
   text-align: right;
   overflow-wrap: anywhere;
+  color: #f1f8ff;
 }
 
 .password-card {
@@ -5368,6 +5369,7 @@ h1 {
   .answer-box,
   .tool-card,
   .service-card,
+  .settings-card,
   .password-card,
   .row-card,
   .knowledge-card,

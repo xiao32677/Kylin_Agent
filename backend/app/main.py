@@ -13,7 +13,7 @@ from urllib.parse import parse_qs, urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from auth import authenticate, ensure_default_admin, login, logout_token, require_role
+from auth import authenticate, change_password, ensure_default_admin, login, logout_token, require_role
 from agent import decide_approval_safe, get_approvals, get_audit, get_audit_trace, get_dashboard, get_knowledge, get_knowledge_stats, get_model_status, get_stats, get_tools, handle_chat, invoke_registered_tool
 from guardrail import check_text
 from knowledge import add_knowledge_item, ensure_knowledge_seed
@@ -172,6 +172,16 @@ class A2Handler(BaseHTTPRequestHandler):
                 self._send_json(result, 200 if result.get("success") else 401)
             elif path == "/api/v1/auth/logout":
                 self._send_json(logout_token(self.headers.get("Authorization")))
+            elif path == "/api/v1/auth/change-password":
+                user = self._require({"admin", "operator", "auditor"})
+                if not user:
+                    return
+                result = change_password(
+                    user["id"],
+                    str(payload.get("current_password", "")),
+                    str(payload.get("new_password", "")),
+                )
+                self._send_json(result, 200 if result.get("success") else 400)
             elif path == "/api/v1/chat":
                 user = self._require({"admin", "operator"})
                 if not user:

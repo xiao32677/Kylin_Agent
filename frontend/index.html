@@ -574,6 +574,25 @@
             <button id="refreshSettings" class="ghost" type="button">刷新</button>
           </div>
           <div id="settingsGrid" class="settings-grid"></div>
+          <form id="passwordForm" class="settings-card password-card">
+            <h3>账号安全</h3>
+            <label>
+              <span>当前密码</span>
+              <input id="currentPassword" autocomplete="current-password" type="password" required />
+            </label>
+            <label>
+              <span>新密码</span>
+              <input id="newPassword" autocomplete="new-password" type="password" minlength="8" required />
+            </label>
+            <label>
+              <span>确认新密码</span>
+              <input id="confirmPassword" autocomplete="new-password" type="password" minlength="8" required />
+            </label>
+            <div class="password-actions">
+              <small id="passwordStatus">修改后需要重新登录</small>
+              <button type="submit">修改密码</button>
+            </div>
+          </form>
         </section>
       </main>
     </div>

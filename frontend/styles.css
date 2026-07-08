@@ -1378,6 +1378,39 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.password-card {
+  margin: 0 16px 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.password-card label {
+  display: grid;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.password-card input {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+
+.password-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.password-actions small {
+  color: var(--muted);
+}
+
 .audit-filter-bar select,
 .approval-filter-bar select {
   min-height: 30px;
@@ -5335,6 +5368,7 @@ h1 {
   .answer-box,
   .tool-card,
   .service-card,
+  .password-card,
   .row-card,
   .knowledge-card,
   .rag-sidebar,

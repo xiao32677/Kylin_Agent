@@ -160,6 +160,29 @@ def logout_token(authorization: str | None) -> dict[str, Any]:
     return {"success": True, "revoked": cur.rowcount > 0}
 
 
+def change_password(user_id: str, current_password: str, new_password: str) -> dict[str, Any]:
+    current_password = str(current_password or "")
+    new_password = str(new_password or "")
+    if len(new_password) < 8:
+        return {"success": False, "error": {"code": "AUTH_PASSWORD_WEAK", "message": "新密码至少需要 8 位"}}
+    if current_password == new_password:
+        return {"success": False, "error": {"code": "AUTH_PASSWORD_REUSED", "message": "新密码不能与当前密码相同"}}
+    with connect() as conn:
+        row = conn.execute("SELECT * FROM app_users WHERE id = ? AND status = 'active'", (user_id,)).fetchone()
+        if not row:
+            return {"success": False, "error": {"code": "AUTH_USER_NOT_FOUND", "message": "用户不存在或已停用"}}
+        user = rows_to_dicts([row])[0]
+        if not _verify_password(current_password, user["password_hash"]):
+            return {"success": False, "error": {"code": "AUTH_INVALID_CURRENT_PASSWORD", "message": "当前密码不正确"}}
+        conn.execute(
+            "UPDATE app_users SET password_hash = ?, updated_at = ? WHERE id = ?",
+            (_hash_password(new_password), now_iso(), user_id),
+        )
+        conn.execute("DELETE FROM auth_tokens WHERE user_id = ?", (user_id,))
+    _clear_login_failures(str(user["username"]))
+    return {"success": True, "message": "密码已修改，请重新登录"}
+
+
 def authenticate(authorization: str | None) -> dict[str, Any] | None:
     if not authorization or not authorization.startswith("Bearer "):
         return None

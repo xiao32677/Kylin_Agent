@@ -1273,6 +1273,34 @@ async function loadSettings() {
   ].join("");
 }
 
+async function changePassword(event) {
+  event.preventDefault();
+  const status = $("#passwordStatus");
+  const currentPassword = $("#currentPassword").value;
+  const newPassword = $("#newPassword").value;
+  const confirmPassword = $("#confirmPassword").value;
+  status.textContent = "";
+  if (newPassword.length < 8) {
+    status.textContent = "新密码至少需要 8 位";
+    return;
+  }
+  if (newPassword !== confirmPassword) {
+    status.textContent = "两次输入的新密码不一致";
+    return;
+  }
+  try {
+    const result = await api("/api/v1/auth/change-password", {
+      method: "POST",
+      body: JSON.stringify({ current_password: currentPassword, new_password: newPassword }),
+    });
+    status.textContent = result.message || "密码已修改，请重新登录";
+    $("#passwordForm").reset();
+    setTimeout(() => logout(true), 900);
+  } catch (error) {
+    status.textContent = error.message;
+  }
+}
+
 function renderAudit(item) {
   const title = item.title || `${item.event_type} · ${item.summary}`;
   const detail = item.description || (item.detail ? JSON.stringify(item.detail).slice(0, 180) : "");
@@ -1977,6 +2005,7 @@ function bindEvents() {
   $("#refreshTools").addEventListener("click", loadTools);
   $("#refreshMcp").addEventListener("click", loadMcp);
   $("#refreshSettings").addEventListener("click", loadSettings);
+  $("#passwordForm").addEventListener("submit", changePassword);
   $("#refreshApprovals").addEventListener("click", loadApprovals);
   $("#refreshKnowledge").addEventListener("click", () => loadKnowledge());
   $("#auditEventFilter").addEventListener("change", (event) => {
